@@ -1,0 +1,391 @@
+package com;
+
+public class Order {
+	private String name;
+	private int total = 0;
+    private int redQty=0;
+    private int greenQty=0;
+    private int milkteaQty=0;
+    private int hamQty=0;
+    private int friQty=0;
+    private int chiQty=0;
+    private int sandQty=0;
+    private boolean member;
+    
+    public Order(String name,int total,int redQty,int greenQty,int milkteaQty,int hamQty,int friQty,int chiQty,int sandQty)
+    {
+    super();
+    this.total=total;
+    this.redQty=redQty;
+    this.greenQty=greenQty;
+    this.milkteaQty=milkteaQty;
+    this.hamQty=hamQty;
+    this.friQty=friQty;
+    this.chiQty=chiQty;
+    this.sandQty=sandQty;
+    total=redQty*20+greenQty*20+milkteaQty*30+hamQty*60+friQty*50+chiQty*50+sandQty*80;
+    }
+    
+    
+	public int getTotal() {
+		return total;
+	}
+	public void setTotal(int total) {
+		this.total = total;
+	}
+	public int getRedQty() {
+		return redQty;
+	}
+	public void setRedQty(int redQty) {
+		this.redQty = redQty;
+	}
+	public int getGreenQty() {
+		return greenQty;
+	}
+	public void setGreenQty(int greenQty) {
+		this.greenQty = greenQty;
+	}
+	public int getMilkteaQty() {
+		return milkteaQty;
+	}
+	public void setMilkteaQty(int milkteaQty) {
+		this.milkteaQty = milkteaQty;
+	}
+	public int getHamQty() {
+		return hamQty;
+	}
+	public void setHamQty(int hamQty) {
+		this.hamQty = hamQty;
+	}
+	public int getFriQty() {
+		return friQty;
+	}
+	public void setFriQty(int friQty) {
+		this.friQty = friQty;
+	}
+	public int getChiQty() {
+		return chiQty;
+	}
+	public void setChiQty(int chiQty) {
+		this.chiQty = chiQty;
+	}
+	public int getSandQty() {
+		return sandQty;
+	}
+	public void setSandQty(int sandQty) {
+		this.sandQty = sandQty;
+	}
+	public void show()
+    {
+    	System.out.println("總價:"+total);
+    	if(member)
+    	{
+    		total=(int) (total*0.9);
+    	}
+    }
+    
+}
+/*=========================================================================*/
+JButton btnRedPlus_2 = new JButton("+");
+		btnRedPlus_2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				        redQty++;
+					    red.setText(String.valueOf(redQty));
+					    updateDetail(textArea_1);
+			}
+		});
+		btnRedPlus_2.setBounds(222, 14, 74, 27);
+		panel.add(btnRedPlus_2);
+		
+		JButton btnRedMinus_3 = new JButton("-");
+		btnRedMinus_3.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+		        if(redQty>0) {redQty--;}
+			    red.setText(String.valueOf(redQty));
+			    updateDetail(textArea_1);
+			}
+		});
+		btnRedMinus_3.setBounds(111, 16, 62, 23);
+		panel.add(btnRedMinus_3);
+		
+		JButton btnGreenPlus_2_1 = new JButton("+");
+		btnGreenPlus_2_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				greenQty++;
+			    green.setText(String.valueOf(greenQty));
+			    updateDetail(textArea_1);
+			}
+		});
+		btnGreenPlus_2_1.setBounds(222, 47, 74, 23);
+		panel.add(btnGreenPlus_2_1);
+		
+		JButton btnMilkteaPlus_2_2 = new JButton("+");
+		btnMilkteaPlus_2_2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				milkteaQty++;
+				milktea.setText(String.valueOf(milkteaQty));
+				updateDetail(textArea_1);
+			}
+		});
+		btnMilkteaPlus_2_2.setBounds(222, 84, 74, 23);
+		panel.add(btnMilkteaPlus_2_2);
+		
+		JButton btnGreenMinus_2_3 = new JButton("-");
+		btnGreenMinus_2_3.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+		        if(greenQty>0) {greenQty--;}
+		        green.setText(String.valueOf(greenQty));
+		        updateDetail(textArea_1);
+			}
+			}
+		);
+		btnGreenMinus_2_3.setBounds(111, 47, 62, 23);
+		panel.add(btnGreenMinus_2_3);
+		
+		JButton btnMilkteaMinus_2_4 = new JButton("-");
+		btnMilkteaMinus_2_4.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+		        if(milkteaQty>0) {milkteaQty--;}
+		        milktea.setText(String.valueOf(milkteaQty));
+		        updateDetail(textArea_1);
+			}
+		});
+		btnMilkteaMinus_2_4.setBounds(111, 84, 62, 23);
+		panel.add(btnMilkteaMinus_2_4);
+		
+		JButton btnHamPlus_2_1 = new JButton("+");
+		btnHamPlus_2_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				hamQty++;
+				ham.setText(String.valueOf(hamQty));
+				updateDetail(textArea_1);
+			}
+		});
+		btnHamPlus_2_1.setBounds(222, 19, 74, 27);
+		panel_1.add(btnHamPlus_2_1);
+		
+		JButton btnFriPlus_2_2 = new JButton("+");
+		btnFriPlus_2_2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				friQty++;
+				fri.setText(String.valueOf(friQty));
+				updateDetail(textArea_1);
+			}
+		});
+		btnFriPlus_2_2.setBounds(222, 61, 74, 27);
+		panel_1.add(btnFriPlus_2_2);
+		
+		JButton btnChiPlus_2_3 = new JButton("+");
+		btnChiPlus_2_3.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				chiQty++;
+				chi.setText(String.valueOf(chiQty));
+				updateDetail(textArea_1);
+			}
+		});
+		btnChiPlus_2_3.setBounds(222, 103, 74, 27);
+		panel_1.add(btnChiPlus_2_3);
+		
+		JButton btnSandPlus_2_4 = new JButton("+");
+		btnSandPlus_2_4.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				sandQty++;
+				sand.setText(String.valueOf(sandQty));
+				updateDetail(textArea_1);
+			}
+		});
+		btnSandPlus_2_4.setBounds(222, 149, 74, 27);
+		panel_1.add(btnSandPlus_2_4);
+		
+		JButton btnHamMinus_2_4_1 = new JButton("-");
+		btnHamMinus_2_4_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+		        if(hamQty>0) {hamQty--;}
+		        ham.setText(String.valueOf(hamQty));
+		        updateDetail(textArea_1);
+			}
+		});
+		btnHamMinus_2_4_1.setBounds(111, 19, 62, 23);
+		panel_1.add(btnHamMinus_2_4_1);
+		
+		JButton btnFriMinus_2_4_2 = new JButton("-");
+		btnFriMinus_2_4_2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+		        if(friQty>0) {friQty--;}
+		        fri.setText(String.valueOf(friQty));
+		        updateDetail(textArea_1);
+			}
+		});
+		btnFriMinus_2_4_2.setBounds(111, 61, 62, 23);
+		panel_1.add(btnFriMinus_2_4_2);
+		
+		JButton btnChiMinus_2_4_3 = new JButton("-");
+		btnChiMinus_2_4_3.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+		        if(chiQty>0) {chiQty--;}
+		        chi.setText(String.valueOf(chiQty));
+		        updateDetail(textArea_1);
+			}
+		});
+		btnChiMinus_2_4_3.setBounds(111, 103, 62, 23);
+		panel_1.add(btnChiMinus_2_4_3);
+		
+		JButton btnSandMinus_2_4_4 = new JButton("-");
+		btnSandMinus_2_4_4.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+		        if(sandQty>0) {sandQty--;}
+		        sand.setText(String.valueOf(sandQty));
+		        updateDetail(textArea_1);
+			}
+		});
+		btnSandMinus_2_4_4.setBounds(111, 149, 62, 23);
+		panel_1.add(btnSandMinus_2_4_4);
+		
+		JButton btnNewButton = new JButton("結帳");
+		btnNewButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				int total=0;
+				total+=redQty*20;
+				total+=greenQty*20;
+				total+=milkteaQty*30;
+				total+=hamQty*60;
+				total+=friQty*50;
+				total+=chiQty*50;
+				total+=sandQty*80;
+				
+				double finalprice=total;
+				if(member.isSelected())
+				{
+				finalprice=total*0.9;
+				textArea.setText(
+						 "原價："+ total+"元\n"+
+						 "會員：是\n"+
+						 "折扣："+(total-finalprice)+"元\n"+
+						 "應付金額："+(int)finalprice+"元"
+						);
+				}
+				else
+				{
+					textArea.setText(
+							"原價："+ total+"元\n"+
+							"會員：否\n"+
+							"總價："+total+"元"
+							);
+				}
+			}
+		});
+		btnNewButton.setBounds(326, 212, 143, 36);
+		btnNewButton.setFont(new Font("新細明體", Font.PLAIN, 16));
+		contentPane.add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("關閉");
+		btnNewButton_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				System.exit(0);
+			}
+		});
+		btnNewButton_1.setBounds(499, 262, 143, 36);
+		btnNewButton_1.setFont(new Font("新細明體", Font.PLAIN, 16));
+		contentPane.add(btnNewButton_1);
+		
+		JButton btnNewButton_5 = new JButton("清除");
+		btnNewButton_5.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				    redQty=0;
+				    greenQty=0;
+				    milkteaQty=0;
+				    hamQty=0;
+				    friQty=0;
+				    chiQty=0;
+				    sandQty=0;
+				    red.setText("0");
+				    green.setText("0");
+				    milktea.setText("0");
+				    ham.setText("0");
+				    fri.setText("0");
+				    chi.setText("0");
+				    sand.setText("0");
+				    textArea.setText("");
+				    updateDetail(textArea_1);
+			}
+		});
+		btnNewButton_5.setFont(new Font("新細明體", Font.PLAIN, 16));
+		btnNewButton_5.setBounds(499, 212, 143, 36);
+		contentPane.add(btnNewButton_5);
+		
+		JLabel time = new JLabel("New label");
+		time.setFont(new Font("新宋体", Font.PLAIN, 16));
+		time.setBounds(496, 10, 149, 31);
+		panel_2.add(time);
+		
+		JButton btnNewButton_2 = new JButton("列印收據");
+		btnNewButton_2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				try {
+					textArea.print();
+				} catch (PrinterException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+		});
+		btnNewButton_2.setFont(new Font("新細明體", Font.PLAIN, 16));
+		btnNewButton_2.setBounds(329, 264, 140, 34);
+		contentPane.add(btnNewButton_2);
+		DateTimeFormatter now=DateTimeFormatter.ofPattern("HH:mm:ss");
+		Timer timer=new Timer(1000,e->time.setText("現在時間:"+LocalDateTime.now().format(now)));
+		timer.start();
+	}
+	private void updateDetail(JTextArea textArea_1)
+	{
+		String detail="";
+		if(redQty>0)
+		{
+			detail+="紅茶x"+redQty+"="+redQty*20+"元"+"\n";
+		}
+		if(greenQty>0)
+		{
+			detail+="綠茶x"+greenQty+"="+greenQty*20+"元"+"\n";
+		}
+		if(milkteaQty>0)
+		{
+			detail+="奶茶x"+milkteaQty+"="+milkteaQty*30+"元"+"\n";
+		}
+		if(hamQty>0)
+		{
+			detail+="漢堡x"+hamQty+"="+hamQty*60+"元"+"\n";
+		}
+		if(friQty>0)
+		{
+			detail+="薯條x"+friQty+"="+friQty*50+"元"+"\n";
+		}
+		if(chiQty>0)
+		{
+			detail+="雞塊x"+chiQty+"="+chiQty*50+"元"+"\n";
+		}
+		if(sandQty>0)
+		{
+			detail+="總匯x"+sandQty+"="+sandQty*80+"元"+"\n";
+		}
+		textArea_1.setText(detail);
+		
+	}
+}
